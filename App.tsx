@@ -63,36 +63,12 @@ function App(): JSX.Element {
   };
 
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Hi <Text style={styles.highlight}>I'm Diwan</Text> 
-            Now I'll learn mobile devs to create apps, wish me an amazing journey to learn ahead.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
+  
+    <View className='flex-1 justify-center items-center'>
+    <Text style={{color: "red"}}>Hi! <Text style={styles.highlight}>I'm Diwan</Text></Text>
+    <Text>I can't wait till i get back to you 🎉</Text>
+  </View>
+    
   );
 }
 
