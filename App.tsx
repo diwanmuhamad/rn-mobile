@@ -77,7 +77,8 @@ function App(): JSX.Element {
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}>
           <Section title="Step One">
-            Hi <Text style={styles.highlight}>I'm Diwan</Text> and now I'm back to create awesome mobile apps
+            Hi <Text style={styles.highlight}>I'm Diwan</Text> 
+            Now I'll learn mobile devs to create apps, wish me an amazing journey to learn ahead.
           </Section>
           <Section title="See Your Changes">
             <ReloadInstructions />
