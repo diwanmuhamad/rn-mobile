@@ -1,11 +1,17 @@
 import {View, Text, StatusBar, Image, SafeAreaView, TextInput, TouchableOpacity, FlatList} from 'react-native'
+import { useState } from 'react'
+
+import { themeColors } from '../theme'
+import { categories, coffeeItems } from '../constants'
+import { CoffeeCard } from '../components'
+
 import {MapPinIcon} from 'react-native-heroicons/solid'
 import {BellIcon, MagnifyingGlassIcon} from 'react-native-heroicons/outline'
-import { themeColors } from '../theme'
-import { categories } from '../constants'
-import { useState } from 'react'
+import Carousel from 'react-native-snap-carousel';
+
 const HomeScreen = () => {
     const [category, setCategory] = useState(1)
+    
     return (
         <View className='flex-1 justify-center items-center p-2'>
             <StatusBar />
@@ -60,7 +66,23 @@ const HomeScreen = () => {
                         }}
                     />
                 </View>
+
+                
             </SafeAreaView>
+            {/* coffee cards */}
+            <View className={`overflow-visible flex justify-center flex-1 -mt-[100px]`}>
+                <Carousel 
+                    containerCustomStyle={{overflow: 'visible'}}
+                    data={coffeeItems}
+                    renderItem={({item})=> <CoffeeCard item={item}/>}
+                    firstItem={1}
+                    inactiveSlideOpacity={0.75}
+                    inactiveSlideScale={0.77}
+                    sliderWidth={400}
+                    itemWidth={260}
+                    slideStyle={{display: 'flex', alignItems: 'center'}}
+                />
+            </View>
         </View>
     )
 }
